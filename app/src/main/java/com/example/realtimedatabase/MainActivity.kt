@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity(), ReyclerInterface {
 
 
     // Fire Store Database work
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
