@@ -15,17 +15,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.realtimedatabase.databinding.ActivityMainBinding
 import com.google.firebase.Firebase
-import com.google.firebase.database.ChildEventListener
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.google.firebase.firestore.firestore
-import com.google.firebase.firestore.toObject
 
-class MainActivity : AppCompatActivity(), ReyclerInterface {
+class MainActivity : AppCompatActivity(), RecyclerInterface {
     private lateinit var binding: ActivityMainBinding
     var itemArray = arrayListOf<ItemData>()
     var recyclerAdapter = RecyclerAdapter(itemArray, this)
@@ -105,39 +101,6 @@ class MainActivity : AppCompatActivity(), ReyclerInterface {
 
 
 
-
-//        dbReference.addChildEventListener(object : ChildEventListener {
-//            override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
-//                Log.e(TAG, "snapshot $ {snapshot.value}")
-//                val itemData: ItemData? = snapshot.getValue(ItemData::class.java)
-//                itemData?.id = snapshot.key
-//                Log.e(TAG, "snapshot $ {snapshot.value}")
-//                if (itemData != null) {
-//                    itemArray.add(itemData)
-//                    recyclerAdapter.notifyDataSetChanged()
-//
-//                }
-//            }
-//
-//            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
-//                TODO("Not yet implemented")
-//            }
-//
-//            override fun onChildRemoved(snapshot: DataSnapshot) {
-//                TODO("Not yet implemented")
-//            }
-//
-//            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
-//                TODO("Not yet implemented")
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                TODO("Not yet implemented")
-//            }
-//
-//        })
-
-//        itemArray.add(ItemData("", "Matric", "english", 55))
         binding.rvDyn.adapter = recyclerAdapter
         linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rvDyn.layoutManager = linearLayoutManager
@@ -195,8 +158,8 @@ class MainActivity : AppCompatActivity(), ReyclerInterface {
 
     //firestore conversation data object
 
-    fun convertObject(snapshot : QueryDocumentSnapshot): ItemData?{
-        val itemModel : ItemData?=
+    fun convertObject(snapshot : QueryDocumentSnapshot): ItemData{
+        val itemModel : ItemData=
             snapshot.toObject(ItemData ::class.java)
         if (itemModel != null) {
             itemModel.id = snapshot.id?: ""

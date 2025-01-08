@@ -1,6 +1,6 @@
 package com.example.realtimedatabase
 
-interface ReyclerInterface {
+interface RecyclerInterface {
     fun updateBtn(position : Int)
 
     fun deleteBtn(position: Int)

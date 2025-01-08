@@ -8,32 +8,31 @@
         android:id="@+id/classeEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter class name"
-        android:inputType="text"
         android:layout_margin="20dp"
-        />
+        android:hint="Enter class name"
+        android:inputType="text" />
+
     <EditText
         android:id="@+id/rollNumberEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter rollnumber"
-        android:inputType="number"
         android:layout_margin="20dp"
-        />
+        android:hint="Enter rollnumber"
+        android:inputType="number" />
+
     <EditText
         android:id="@+id/subjectEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter subject name"
-        android:inputType="text"
         android:layout_margin="20dp"
-        />
+        android:hint="Enter subject name"
+        android:inputType="text" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/addBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="add"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:text="add" />
 
 </LinearLayout>

@@ -9,7 +9,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerAdapter(var itemArray: ArrayList<ItemData>,
-    var reyclerInterface: ReyclerInterface) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
+    var reyclerInterface: RecyclerInterface) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
     class ViewHolder (private var view: View):RecyclerView.ViewHolder(view){
         var className : TextView = view.findViewById(R.id.tvClass)
         var rollNumber : TextView = view.findViewById(R.id.tvRoll)
